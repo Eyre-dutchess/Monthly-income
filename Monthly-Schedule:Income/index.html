@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1 class="title">Monthly Income</h1>
+    <button class="add-new-month-btn" data-add-new-month-btn>Add New Month</button>
+
+    <div class="monthes-container" data-monthes-container>
+    <div class="monthes-container" data-monthes-container>   
+        <div class="month-container" data-month-container> -->
+            <button class="del-month-btn" data-del-month-btn>X</button>
+            <form action="submit" class="name-form" data-name-form>
+                    <label for="name" class="name-label">Sep</label>
+                    <input type="text" id="name" class="name-input" data-name-input>
+            </form>
+
+            <div class="date-container">
+                <ul class="date-list" data-date-list-container>
+                    <li class="date-item">01</li>
+                </ul>
+                <form action="submit" class="date-form" data-date-form>
+                    <input type="text" class="date-input" data-date-input>
+                    <button class="add-new date-btn"></button>
+                </form>
+                <button class="del-date-btn"></button>
+            </div>
+
+            <div class="income-container">
+                <button class="add-new detail-btn" data-add-new-detail-btn></button>
+                <div class="detail-form-container">
+                    <div action="" class="detail-container">
+                        <form class="time">
+                            <label >Time: <span>4:30</span> </label>
+                            <input type="text" class="data-time-input">
+                        </form>
+                        <form class="st-name">
+                            <label >Name: <span>Jerry</span></label>
+                            <input type="text" class="data-st-name-input">
+                        </form>
+                        <form class="income">
+                            <label >Income:<span>500</span></label>
+                            <input type="text" class="data-income-input">
+                        </form>
+                        <button class="del-detail-form-btn">X</button>
+                    </div>
+                    
+                </div>
+
+                <div class="total-container">
+                    <button class="check-btn"></button>
+                    <div class="total-output">
+                        <p>Total: </p>
+                        <p class="total-result">3400</p>
+                    </div>
+                </div>
+            </div>
+         </div> 
+    </div>
+    
+</body>
+</html>
