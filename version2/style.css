@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" );
+
+:root{
+    --clr-light-1: hsl(160 30% 90%);
+    --clr-accent-4: hsl(160 60% 50%);
+    --clr-primary: hsl(160 30% 40%);
+    --clr-dark-8: hsl(160 50% 10%);
+
+    --ff: "Ubuntu", sans-serif;
+    --fs-1: 0.75rem;
+    --fs-2: 1rem;
+    --fs-5: 1.5rem;
+    --fs-8: 2.5rem;
+
+    --fw-4: 400;
+    --fw-7: 700;
+
+    --box-1: 1px 1px 0.3em 0 hsl(160 50% 10%/0.25);
+    --box-2: 3px 3px 3px 0 hsl(160 80% 50%);
+    --trans: all 300ms ease;
+    --br: 5px;
+
+    --test: 2px solid red;
+    --line: 1px solid hsl(160 30% 40%);
+}
+
+body{
+    font-family: var(--ff);
+    font-size: var(--fs-2);
+    font-weight: var(--fw-4);
+    color: var(--clr-primary);
+}
+ul li{
+    list-style: none;
+}
+h1{
+    font-weight: var(--fw-7);
+    font-size: var(--fs-8);
+    color: var(--clr-dark-8);
+    text-align: center;
+}
+button{
+    border: none;
+    background-color: var(--clr-light-1);
+    box-shadow: var(--box-1);
+    cursor: pointer;
+    color: var(--clr-accent-4);
+    transition: var(--trans);
+}
+button:hover{
+    box-shadow: inset var(--box-2);
+}
+
+.top{
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.add-new-month-btn{
+    border-radius: 100vw;
+    padding: 0.25em 0.75em;
+}
+
+.all-monthes-container{
+    width: 80%;
+    margin-inline: auto;
+    border-radius: var(--br);
+    box-shadow: var(--box-1);
+    padding: 1em 5vw;
+}
+.month-container{
+    border: var(--line);
+    display: grid;
+    grid-template-columns: 3em 1fr;
+    grid-template-rows:4em 1fr;
+    margin-bottom: 2em;
+}
+/* .month-container>*{
+    border: var(--test);
+} */
+.month-top{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    position: relative;
+    width: 100%;
+    padding: 1em 3em;
+    background-color: hsl(160 30% 90%/0.75);
+}
+.del-month-btn{
+    border-radius: 50%;
+    color: red;
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+}
+.name-form{
+    position: relative;
+    height: 2em;
+    border-bottom: var(--line);
+}
+.name-form>*{
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    border: none;
+}
+.name-label{
+    width: 45%;
+    left: 30%;
+    text-align: center;
+}
+.name-input{
+    opacity: 0;
+    outline: none;
+}
+.name-form:focus-within input{
+    opacity: 1;
+}
+
+
+
+
+.date-container{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    border-right: var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.date-list{
+    width: 100%;
+    
+}
+.date-item{
+    height: 1.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    background-color: hsl(160 50% 70%/0.5);
+    cursor: pointer;
+}
+.date-item.active{
+    background-color: hsl(160 50% 70%);
+}
+.date-form{
+    width: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.date-input{
+    width: 100%;
+    height: 1.25em;
+    outline: none;
+    padding-left: 0.1em;
+    border: none;
+    background-color: hsl(160 50% 70%);
+    display: none;
+    border-bottom: var(--line);
+    border-right: var(--line);
+}
+.date-form:focus-within input{
+    display: block;
+}
+.date-container button{
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    margin-block: 0.25em;
+}
+.add-date-btn, .add-new-income-btn{
+    background-image: url("./plus-solid.svg");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.del-date-btn{
+    background-image: url("./minus-solid.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+
+
+.income-container header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.add-new-income-btn{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+.income-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: var(--fs-1);
+    padding: 0.25em 0.5em;
+}
+
+.income-form input{
+    width: 4em;
+    bordeR: none;
+    outline: none;
+    bordeR-bottom: var(--line);
+    text-align: center;
+}
+.income-form>*{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.income-forms-container{
+    width: 90%;
+    margin-inline: auto;
+    box-shadow: inset var(--box-1);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.income-detail-output{
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: var(--line);
+    font-size: var(--fs-1);
+}
+
+.del-income-btn{
+    width: 1.25em;
+    height: 1.25em;
+    padding:0;
+    border-radius: 50%;
+    color: red;
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.del-income-btn:hover{
+    transform: scale(1.3);
+    box-shadow: unset;
+}
+
+
+
+.total-container{
+    width: 15em;
+    margin-lefT: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1em 5vw;
+    gap: 0.5em;
+}
+.total-btn{
+    width: 2em;
+    height: 2em;
+    background-image: url("./check-solid.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    border-radius: 50%;
+}
+
+.total-value span{
+    border-bottom: var(--line);
+    padding-inline: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset/* Remove default margin */
+*
+ {
+  margin: 0;
+  padding:0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* reset/* Set core body defaults */
+body,
+html {
+  height:100%;
+}
+body{
+    text-rendering: optimizespeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* reset/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+
+/* remove transition/animation */
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after{
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ scroll-behavior: auto !important;}}
+
+
+
+/*  utility class */
+.sr-only{
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: 1px;
+overflow: hidden;
+clip: rect(0, 0,0,0);
+white-space: nowrap;
+border: 0;
+}
+
